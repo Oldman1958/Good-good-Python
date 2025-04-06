@@ -18,7 +18,11 @@ def get_even(*args):
     res = [i for i in args if i % 2 == 0]
     return res
 
+"""
+Эти строчки отправлять не нужно. Они только для проверки работоспособности функции.
 
 inp_lst = list(map(int, input().split()))
 
 print(*get_even(*inp_lst))
+"""
+
