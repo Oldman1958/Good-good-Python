@@ -19,12 +19,8 @@ def str_min(s1, s2):
 
 
 def str_min3(s1, s2, s3):
-    a = str_min(s1, s2)
-    return str_min(s3, a)
+    return str_min(s3, str_min(s1, s2))
 
 
 def str_min4(s1, s2, s3, s4):
-    a = str_min(s1, s2)
-    b = str_min(s3, s4)
-    return str_min(a, b)
-
+    return str_min(str_min(s1, s2), str_min(s3, s4))
