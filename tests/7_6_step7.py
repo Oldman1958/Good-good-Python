@@ -6,5 +6,6 @@
 print(*lst)
 """
 
-d = tuple(map(int, input().split()))
-print(*range(*d))
+a, b = (map(int, input().split()))
+d = [*range(a, b+1)]
+print(*d)
