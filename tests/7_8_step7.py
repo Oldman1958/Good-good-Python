@@ -13,3 +13,4 @@ get_part = lambda s: True if "ra" in s else False
 s = input()
 
 print(get_part(s))
+#

@@ -12,3 +12,4 @@ get_abs = lambda x: abs(x)
 x = float(input())
 
 print(get_abs(x))
+#

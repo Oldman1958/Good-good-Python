@@ -10,3 +10,4 @@ get_div = lambda a, b: a / b if b != 0 else None
 
 # print(get_div(6, 0))
 # print(get_div(8, 4))
+#
