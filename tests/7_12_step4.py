@@ -16,7 +16,7 @@ s = input()
 """
 
 
-def get_tag(tag):
+def get_tag(tag='h1'):
     """Функция декоратор, принимающая и передающая далее параметр tag"""
 
     def func_decorator(func):
@@ -32,7 +32,7 @@ def get_tag(tag):
     return func_decorator
 
 
-@get_tag(tag='h1')      # Передаем в декоратор параметр - тэг h1
+@get_tag(tag='dev')      # Передаем в декоратор параметр - тэг dev
 def get_lower(s):
     res = s.lower()
     return res
