@@ -8,3 +8,6 @@ from math import ceil as c
 i = float(input())
 
 print(c(i))
+
+# Короткий вариант, вместо двух предыдущих строчек кода пишется одна -
+# print(c(float(input())))
