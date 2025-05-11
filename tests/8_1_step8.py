@@ -7,8 +7,7 @@ seed(10)
 print(round(rnd(), 2))
 """
 
-from random import seed
-from random import random as rnd
+from random import seed, random as rnd
 
 seed(10)
 print(round(rnd(), 2))
