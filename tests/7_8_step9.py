@@ -33,18 +33,28 @@ rect_coords = [(x0, y0), (x1, y1), (x2, y2), (x3, y3)]
 """
 
 
-
 # Затупил реально. Так и не добил даже костыльное решение. Поэтому списал честно.
 
 # здесь объявляйте функцию
-def is_right_rect(a, b, c, d, /, *, precision=0.001):
-    d1 = ((a[0] - c[0]) ** 2 + (a[1] - c[1]) ** 2) ** 0.5
-    d2 = ((b[0] - d[0]) ** 2 + (b[1] - d[1]) ** 2) ** 0.5
 
-    return abs(d1 - d2) < precision
+def is_right_rect(a, b, c, d, /, *, precision=0.001):
+    ab = (b[0] - a[0], b[1] - a[1])
+    ad = (d[0] - a[0], d[1] - a[1])
+
+    ba = (a[0] - b[0], a[1] - b[1])
+    bc = (c[0] - b[0], c[1] - b[1])
+
+    cd = (d[0] - c[0], d[1] - c[1])
+    cb = (b[0] - c[0], b[1] - c[1])
+
+    res_a = (ab[0] * ad[0] + ab[1] * ad[1]) / ((ab[0] ** 2 + ab[1] ** 2) ** 0.5 * (ad[0] ** 2 + ad[1] ** 2) ** 0.5)
+    res_b = (bc[0] * ba[0] + bc[1] * ba[1]) / ((bc[0] ** 2 + bc[1] ** 2) ** 0.5 * (ba[0] ** 2 + ba[1] ** 2) ** 0.5)
+    res_c = (cd[0] * cb[0] + cd[1] * cb[1]) / ((cd[0] ** 2 + cd[1] ** 2) ** 0.5 * (cb[0] ** 2 + cb[1] ** 2) ** 0.5)
+
+    return abs(res_a) < precision and abs(res_b) < precision and abs(res_c) < precision
+
 
 rect_coords = [(float(x.split('=')[0]), float(x.split('=')[1])) for x in input().split()]
 
 # здесь продолжайте программу
 result = is_right_rect(*rect_coords)
-
